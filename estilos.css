@@ -1,0 +1,154 @@
+/* Importación de Google Font: Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* ----------------------------------------------------- */
+/* Variables, Estilos Generales y Tipografía */
+/* ----------------------------------------------------- */
+
+:root {
+    /* Variables de Color (inspiradas en AWS) */
+    color-principal: #FF9900;      /* Naranja (Acento AWS) */
+    color-secundario: #232F3E;    /* Azul Oscuro (Header/Footer AWS) */
+    color-fondo-claro: #F9FAFB;   /* Fondo de la página */
+    color-texto-principal: #333333;
+    color-texto-claro: #FFFFFF;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-principal);
+}
+
+/* ----------------------------------------------------- */
+/* Encabezado (Header) */
+/* ----------------------------------------------------- */
+
+header {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    padding: 3em 1em;
+    text-align: center;
+    border-bottom: 8px solid var(--color-principal); 
+}
+
+header h1 {
+    margin-bottom: 0.2em;
+    font-size: 3em;
+    font-weight: 700; 
+}
+
+h2 {
+    color: var(--color-principal);
+    border-bottom: 3px solid #EAEAEA;
+    padding-bottom: 15px;
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+section {
+    background-color: var(--color-texto-claro);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); 
+}
+
+/* ----------------------------------------------------- */
+/* Tarjetas Responsivas (Opciones AWS) */
+/* ----------------------------------------------------- */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.card {
+    background-color: #f0f8ff; 
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 1 100%; /* Por defecto 100% de ancho para móviles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-top: 5px solid var(--color-principal);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--color-secundario);
+    margin-top: 0;
+    font-size: 1.3em;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 10px;
+}
+
+/* ----------------------------------------------------- */
+/* Lista de Beneficios */
+/* ----------------------------------------------------- */
+
+.beneficios ul {
+    list-style: none;
+    padding: 0;
+    /* Usa CSS Grid para hacer la lista responsiva */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+.beneficios li {
+    background-color: #fffaf0; 
+    padding: 15px 20px;
+    border-left: 6px solid var(--color-principal);
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* ----------------------------------------------------- */
+/* Pie de Página (Footer) */
+/* ----------------------------------------------------- */
+
+footer {
+    background-color: var(--color-secundario);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+}
+
+/* ----------------------------------------------------- */
+/* Media Queries (Adaptación Responsiva) */
+/* ----------------------------------------------------- */
+
+/* Para Tablets (768px y mayores) */
+@media (min-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 25px); /* 2 tarjetas por fila */
+    }
+}
+
+/* Para Escritorio (1024px y mayores) */
+@media (min-width: 1024px) {
+    .card {
+        flex: 1 1 calc(25% - 25px); /* 4 tarjetas por fila */
+    }
+
+    header h1 {
+        font-size: 3.5em;
+    }
+}
